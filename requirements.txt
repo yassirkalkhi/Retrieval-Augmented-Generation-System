@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+langchain_core
+langchain_chroma
+langchain_ollama
+requests
+uuid
+dotenv
+pydantic
+typing
