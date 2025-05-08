@@ -1,26 +1,27 @@
 from fastapi import APIRouter
 from services.chroma import ChromaService
 from services.llm import LLMService
-from models.schemas import QueryLLMRequest
+from models.schemas import QueryRequest
 
+
+chroma = ChromaService(collection_name="pdf", embedding_type="query")
+
+
+llm = LLMService()
 
 router = APIRouter()
 
 @router.post("/query")
-async def query_llm(request: QueryLLMRequest):
-    collection_name = "safi"
-    db_location = "./raze"
-    chroma = ChromaService(collection_name,db_location)
-    results = chroma.query(request.query)
-    context = []
-    print('results',results)
-    for document in results:
-          context.append(document.page_content)
+async def query(request: QueryRequest):
+  
+    results = chroma.query(request.query,k=10)
+    # context = []
+    # print('results',results)
+    # for document in results:
+    #   if request.type == 'text':
+    #       context.append(document.page_content)
 
+    # context_text = "\n".join(context)
+    # answer = llm.query(request.query,context_text)
     
-    prompt = f"context:\n\n{context}\n\prompt: {request.query}"
-    
-    llm = LLMService()
-    answer = llm.query_llm(prompt)
-    
-    return {"answer": answer}
+    return {"answer": results}

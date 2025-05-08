@@ -1,0 +1,28 @@
+[33mWARNING[0m:  [07-05-2025 15:08:57] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [07-05-2025 15:08:59] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component System
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component SqliteDB
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component Posthog
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component LocalExecutor
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component SegmentAPI
+[36mDEBUG[0m:    [07-05-2025 15:08:59] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [07-05-2025 15:09:00] Started server process [[36m6756[0m]
+[32mINFO[0m:     [07-05-2025 15:09:00] Waiting for application startup.
+[32mINFO[0m:     [07-05-2025 15:09:00] Application startup complete.
+[31mERROR[0m:    [07-05-2025 15:09:00] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+[32mINFO[0m:     [07-05-2025 15:09:00] Waiting for application shutdown.
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component System
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component SegmentAPI
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component LocalExecutor
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component Posthog
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component SqliteDB
+[36mDEBUG[0m:    [07-05-2025 15:09:00] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [07-05-2025 15:09:00] Application shutdown complete.

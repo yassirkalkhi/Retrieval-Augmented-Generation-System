@@ -1,9 +1,15 @@
 fastapi
 uvicorn
 langchain
+chromadb
+asyncio
 langchain_core
 langchain_chroma
 langchain_ollama
+open-clip-torch
+torch
+transformers
+pypdf
 requests
 uuid
 dotenv
