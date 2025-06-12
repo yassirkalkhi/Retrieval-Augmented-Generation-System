@@ -1,4 +1,5 @@
 fastapi
+python-multipart
 uvicorn
 langchain
 chromadb
@@ -12,6 +13,8 @@ transformers
 pypdf
 requests
 uuid
-dotenv
 pydantic
 typing
+python-docx
+langchain_community
+Pillow

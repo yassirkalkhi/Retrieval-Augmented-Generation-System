@@ -19,14 +19,10 @@ class EmbeddingService(EmbeddingFunction):
             raise ValueError(f"Unsupported embedding type: {type}")
 
     def __call__(self, input: Documents) -> Embeddings:
-        """
-        This is the method required by the EmbeddingFunction interface.
-        It will be called by Chroma to generate embeddings for the documents.
-        :param input: A Documents object, which is a list of documents that need to be embedded.
-        :return: The embeddings (numpy arrays).
-        """
+   
         embeddings = []
         for doc in input:
+            
             if self.type == "query":
                 text_embedding = self.embeddings.embed_query(doc)
                 embeddings.append(np.array(text_embedding))
@@ -34,8 +30,8 @@ class EmbeddingService(EmbeddingFunction):
                 text_embedding = self.embeddings.embed_query(doc)
                 embeddings.append(np.array(text_embedding))
             elif self.type == "image":
-                if content.startswith(('http://', 'https://')):
-                    image = Image.open(requests.get(content, stream=True).raw).convert("RGB")
+                if doc.startswith(('http://', 'https://')):
+                    image = Image.open(requests.get(doc, stream=True).raw).convert("RGB")
                 else:
                     image = Image.open(doc).convert("RGB")
                 
@@ -43,7 +39,7 @@ class EmbeddingService(EmbeddingFunction):
                 with torch.no_grad():
                     image_embedding = self.clip_model.get_image_features(**inputs)
                 embeddings.append(image_embedding[0].cpu().numpy())
-            else:
+            else:   
                 raise ValueError(f"Unsupported embedding type: {self.type}")
 
         return embeddings
